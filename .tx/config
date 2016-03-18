@@ -2,7 +2,7 @@
 host = https://www.transifex.com
 
 [izimobil.djangocms-unitegallery]
-file_filter = djangocms_grid/locale/<lang>/LC_MESSAGES/django.po
-source_file = djangocms_grid/locale/en/LC_MESSAGES/django.po
+file_filter = djangocms_unitegallery/locale/<lang>/LC_MESSAGES/django.po
+source_file = djangocms_unitegallery/locale/en/LC_MESSAGES/django.po
 source_lang = en
 type = PO
