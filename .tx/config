@@ -1,7 +1,7 @@
 [main]
 host = https://www.transifex.com
 
-[izimobil.djangocms-unitegallery]
+[izi.djangocms-unitegallery]
 file_filter = djangocms_unitegallery/locale/<lang>/LC_MESSAGES/django.po
 source_file = djangocms_unitegallery/locale/en/LC_MESSAGES/django.po
 source_lang = en
