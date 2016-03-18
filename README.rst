@@ -1,6 +1,20 @@
 djangocms-unitegallery
 ======================
 
+.. image:: https://travis-ci.org/izimobil/djangocms-unitegallery.svg?branch=master
+    :target: https://travis-ci.org/izimobil/djangocms-unitegallery
+
+.. image:: https://img.shields.io/pypi/l/djangocms-unitegallery.svg
+
+.. image:: https://img.shields.io/pypi/pyversions/djangocms-unitegallery.svg
+
+.. image:: https://img.shields.io/badge/django-1.7%20or%20newer-green.svg
+
+.. image:: https://img.shields.io/badge/djangocms-3%20or%20newer-green.svg
+
+.. image:: https://img.shields.io/pypi/dm/djangocms-unitegallery.svg
+
+
 A gallery plugin for django CMS that uses the excellent
 `Unite Gallery <http://unitegallery.net>`_ jQuery plugin.
 
