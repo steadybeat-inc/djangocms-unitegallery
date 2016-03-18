@@ -1,5 +1,5 @@
-djangocms-grid
-==============
+djangocms-unitegallery
+======================
 
 A gallery plugin for django CMS that uses the excellent
 `Unite Gallery <http://unitegallery.net>`_ jQuery plugin.
@@ -11,9 +11,9 @@ Installation
 This plugin requires `django CMS` 3.0 or higher and `sorl-thumbnail`
 12.0 or higher to work.
 
-* Run ``pip install djangocms-unitegallery``.
-* Add ``'djangocms_unitegallery'`` to your ``INSTALLED_APPS`` setting.
-* Run ``manage.py migrate djangocms_unitegallery``.
+* Run ``pip install djangocms-unitegallery``
+* Add ``'sorl.thumbnail'`` and ``'djangocms_unitegallery'`` to your ``INSTALLED_APPS``
+* Run ``python manage.py migrate``
 
 .. note::
     It's up to you to include jQuery js file in your templates, just make
