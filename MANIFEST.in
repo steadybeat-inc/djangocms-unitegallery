@@ -1,6 +1,4 @@
-include LICENSE.txt
-include README.rst
+include LICENSE README.rst MANIFEST.in
 recursive-include djangocms_unitegallery/locale *
 recursive-include djangocms_unitegallery/templates *
 recursive-include djangocms_unitegallery/static *
-recursive-exclude * *.pyc
