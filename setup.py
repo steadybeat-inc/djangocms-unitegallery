@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
+import sys
 from setuptools import setup
+
 from djangocms_unitegallery import __version__
 
 
@@ -30,6 +33,18 @@ CLASSIFIERS = [
     'Framework :: Django :: 1.8',
     'Framework :: Django :: 1.9',
 ]
+
+
+if sys.version_info >= (3, 0):
+    enc = {'encoding': 'UTF-8'}
+else:
+    enc = {}
+
+long_desc = r'''
+%s
+
+%s
+''' % (open('README.rst', **enc).read(), open('CHANGELOG.rst', **enc).read())
 
 setup(
     name='djangocms-unitegallery',
