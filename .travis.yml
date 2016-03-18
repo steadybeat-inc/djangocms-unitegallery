@@ -1,0 +1,11 @@
+language: python
+sudo: false
+env:
+  matrix:
+    - TOXENV=flake8
+
+install:
+  - pip install tox
+
+script:
+  - tox -e $TOXENV
