@@ -55,7 +55,6 @@ thumbnails and/or wether the image ratio should be preserved or not::
         'THUMBNAIL_MAX_WIDTH': 250,
         'THUMBNAIL_MAX_HEIGHT': 250,
         'THUMBNAIL_PRESERVE_RATIO': False,
-        'USE_EASYTHUMBNAILS': False,
     }
 
 If you set ``THUMBNAIL_PRESERVE_RATIO`` to ``False``, thumbnails will be

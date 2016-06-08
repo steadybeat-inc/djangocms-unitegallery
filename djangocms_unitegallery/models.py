@@ -103,9 +103,6 @@ class GalleryPhoto(models.Model):
             return self.title
         return _("Photo %s") % self.image.name
 
-    def is_portrait(self):
-        return self.image.height_field > self.image.width_field
-
     def get_thumbnail_size(self):
         """
         Returns a string representing the size of the thumbnail, suitable
@@ -114,7 +111,7 @@ class GalleryPhoto(models.Model):
         if not self.image or not CONFIG['THUMBNAIL_ENABLED']:
             return False
         if CONFIG['THUMBNAIL_PRESERVE_RATIO']:
-            if self.is_portrait():
+            if self.image.height > self.image.width:
                 ret = 'x%s' % CONFIG['THUMBNAIL_MAX_HEIGHT']
             else:
                 ret = '%s' % CONFIG['THUMBNAIL_MAX_WIDTH']
