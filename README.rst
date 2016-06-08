@@ -32,6 +32,9 @@ This plugin requires `django CMS` 3.0 or higher, `sorl-thumbnail`
 * Run ``python manage.py migrate``
 
 .. note::
+    It's up to you to install sorl or easy-thumbnail!!!
+
+.. note::
     It's up to you to include jQuery js file in your templates, just make
     sure you include it **before** the sekizai ``{% render_block js %}``.
   
