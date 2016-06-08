@@ -22,11 +22,13 @@ A gallery plugin for django CMS that uses the excellent
 Installation
 ------------
 
-This plugin requires `django CMS` 3.0 or higher and `sorl-thumbnail`
-12.0 or higher to work.
+This plugin requires `django CMS` 3.0 or higher, `sorl-thumbnail`
+12.0 or higher or `easy-thumbnails` 2.3 or higher to work.
 
 * Run ``pip install djangocms-unitegallery``
-* Add ``'sorl.thumbnail'`` and ``'djangocms_unitegallery'`` to your ``INSTALLED_APPS``
+* Add ``'sorl.thumbnail'`` if your project depends on sorl 
+* Or  ``'easy_thumbnail'`` if your project depends on easy-thumbnails 
+* Add ``'djangocms_unitegallery'`` to your ``INSTALLED_APPS``
 * Run ``python manage.py migrate``
 
 .. note::

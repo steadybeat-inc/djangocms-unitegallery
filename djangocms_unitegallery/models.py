@@ -10,7 +10,8 @@ from django.core.exceptions import ValidationError
 
 from cms.models import CMSPlugin
 from cms.utils.compat.dj import python_2_unicode_compatible
-from sorl.thumbnail.templatetags.thumbnail import is_portrait
+# not needed anymore
+# from sorl.thumbnail.templatetags.thumbnail import is_portrait
 
 from .settings import DJANGOCMS_UNITEGALLERY_CONFIG as CONFIG
 
@@ -102,6 +103,9 @@ class GalleryPhoto(models.Model):
             return self.title
         return _("Photo %s") % self.image.name
 
+    def is_portrait(self):
+        return self.image.height_field > self.image.width_field
+
     def get_thumbnail_size(self):
         """
         Returns a string representing the size of the thumbnail, suitable
@@ -110,7 +114,7 @@ class GalleryPhoto(models.Model):
         if not self.image or not CONFIG['THUMBNAIL_ENABLED']:
             return False
         if CONFIG['THUMBNAIL_PRESERVE_RATIO']:
-            if is_portrait(self.image):
+            if self.is_portrait():
                 ret = 'x%s' % CONFIG['THUMBNAIL_MAX_HEIGHT']
             else:
                 ret = '%s' % CONFIG['THUMBNAIL_MAX_WIDTH']
