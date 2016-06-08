@@ -18,8 +18,14 @@ class GalleryPlugin(CMSPluginBase):
     model = Gallery
     name = _('Gallery')
     module = _('Unite gallery')
-    render_template = 'djangocms_unitegallery/gallery.html'
+#    render_template = self.get_template()
     inlines = [PhotoInline, ]
+
+    def get_render_template(self, context, instance, placeholder):
+        default = 'djangocms_unitegallery/gallery.html'
+        if CONFIG['USE_EASYTHUMBNAILS']:
+            default = 'djangocms_unitegallery/easythumb-gallery.html'
+        return default
 
     def render(self, context, instance, placeholder):
         context.update({
