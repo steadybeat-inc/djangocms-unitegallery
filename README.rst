@@ -55,7 +55,7 @@ thumbnails and/or wether the image ratio should be preserved or not::
         'THUMBNAIL_MAX_WIDTH': 250,
         'THUMBNAIL_MAX_HEIGHT': 250,
         'THUMBNAIL_PRESERVE_RATIO': False,
-        'USE_EASYTHUMBNAILS': True,
+        'USE_EASYTHUMBNAILS': False,
     }
 
 If you set ``THUMBNAIL_PRESERVE_RATIO`` to ``False``, thumbnails will be
@@ -67,3 +67,16 @@ or height (if image is portrait).
 .. note::
     Due to Unite Gallery behavior, and depending on configured options, you
     are not guaranteed to have the thumbnail size you configured in settings.
+
+Templates
+---------
+
+The template beheauvior has changed since 0.1.0.
+If you are using sorl as thumbnail library - nothing has changed for you and 
+if you are using easy-thumbnails the template "easythumb-gallery.html" did the
+trick.
+
+Why do we do that?
+------------------
+You can't use both thumbnail libraries side by side. 
+Like murphies law: You are using the false thumbnail library ;)
