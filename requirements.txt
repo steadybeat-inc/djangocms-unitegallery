@@ -1,2 +1,2 @@
 django-cms>=3.0
-sorl-thumbnail>=12.0
+# sorl-thumbnail>=12.0

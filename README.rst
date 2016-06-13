@@ -22,12 +22,17 @@ A gallery plugin for django CMS that uses the excellent
 Installation
 ------------
 
-This plugin requires `django CMS` 3.0 or higher and `sorl-thumbnail`
-12.0 or higher to work.
+This plugin requires `django CMS` 3.0 or higher, `sorl-thumbnail`
+12.0 or higher or `easy-thumbnails` 2.3 or higher to work.
 
 * Run ``pip install djangocms-unitegallery``
-* Add ``'sorl.thumbnail'`` and ``'djangocms_unitegallery'`` to your ``INSTALLED_APPS``
+* Add ``'sorl.thumbnail'`` if your project depends on sorl 
+* Or  ``'easy_thumbnail'`` if your project depends on easy-thumbnails 
+* Add ``'djangocms_unitegallery'`` to your ``INSTALLED_APPS``
 * Run ``python manage.py migrate``
+
+.. note::
+    It's up to you to install sorl or easy-thumbnail!!!
 
 .. note::
     It's up to you to include jQuery js file in your templates, just make
@@ -49,7 +54,7 @@ thumbnails and/or wether the image ratio should be preserved or not::
         'THUMBNAIL_ENABLED': true,
         'THUMBNAIL_MAX_WIDTH': 250,
         'THUMBNAIL_MAX_HEIGHT': 250,
-        'THUMBNAIL_PRESERVE_RATIO': False, 
+        'THUMBNAIL_PRESERVE_RATIO': False,
     }
 
 If you set ``THUMBNAIL_PRESERVE_RATIO`` to ``False``, thumbnails will be
@@ -61,3 +66,17 @@ or height (if image is portrait).
 .. note::
     Due to Unite Gallery behavior, and depending on configured options, you
     are not guaranteed to have the thumbnail size you configured in settings.
+
+Templates
+---------
+
+The template behavior has changed since 0.1.0.
+If you are using sorl as thumbnail library - nothing has changed for you and 
+if you are using easy-thumbnails the template "easythumb-gallery.html" did the
+trick.
+
+Why do we do that?
+------------------
+
+You can't use both thumbnail libraries side by side. 
+Like murphies law: You are using the false thumbnail library ;)
