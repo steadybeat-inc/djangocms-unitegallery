@@ -43,6 +43,22 @@ class Gallery(CMSPlugin):
         choices=GALLERY_THEMES,
         default=GALLERY_THEMES[0][0],
     )
+    title = models.CharField(
+        _("Title"),
+        max_length=100,
+        blank=True,
+        help_text=_(
+            "Leave this blank if you don't want to display a title."
+        )
+    )
+    description = models.CharField(
+        _("Description"),
+        max_length=255,
+        blank=True,
+        help_text=_(
+            "Leave this blank if you don't want to display a description."
+        )
+    )
     options = models.TextField(
         _('Theme options'),
         blank=True,
@@ -55,6 +71,8 @@ class Gallery(CMSPlugin):
     translatable_content_excluded_fields = ['options', 'theme']
 
     def __str__(self):
+        if self.title:
+            return title
         return self.get_theme_display()
 
     def copy_relations(self, old_instance):

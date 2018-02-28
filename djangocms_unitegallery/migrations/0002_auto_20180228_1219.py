@@ -14,6 +14,16 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+        migrations.AddField(
+            model_name='gallery',
+            name='description',
+            field=models.CharField(blank=True, help_text="Leave this blank if you don't want to display a description.", max_length=255, verbose_name='Description'),
+        ),
+        migrations.AddField(
+            model_name='gallery',
+            name='title',
+            field=models.CharField(blank=True, help_text="Leave this blank if you don't want to display a title.", max_length=100, verbose_name='Title'),
+        ),    
         migrations.AlterField(
             model_name='gallery',
             name='cmsplugin_ptr',
