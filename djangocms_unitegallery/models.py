@@ -13,6 +13,8 @@ from cms.utils.compat.dj import python_2_unicode_compatible
 # not needed anymore
 # from sorl.thumbnail.templatetags.thumbnail import is_portrait
 
+from filer.fields.image import FilerImageField
+
 from .settings import DJANGOCMS_UNITEGALLERY_CONFIG as CONFIG
 
 
@@ -75,7 +77,13 @@ class Gallery(CMSPlugin):
 
 @python_2_unicode_compatible
 class GalleryPhoto(models.Model):
-    image = models.ImageField(_("Photo"), upload_to=get_media_path)
+    image = FilerImageField(
+        blank=True,
+        null=True,
+        related_name='gallery_photos',
+        verbose_name=_('Photo'),
+        help_text=_('Stores an image source file.')
+    )
     title = models.CharField(
         _("Title"),
         max_length=100,
@@ -101,7 +109,9 @@ class GalleryPhoto(models.Model):
     def __str__(self):
         if self.title:
             return self.title
-        return _("Photo %s") % self.image.name
+        if self.image:
+          return _("Photo %s") % self.image.url
+        return self.image
 
     def get_thumbnail_size(self):
         """
