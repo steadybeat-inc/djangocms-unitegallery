@@ -72,7 +72,7 @@ class Gallery(CMSPlugin):
 
     def __str__(self):
         if self.title:
-            return title
+            return self.title
         return self.get_theme_display()
 
     def copy_relations(self, old_instance):
