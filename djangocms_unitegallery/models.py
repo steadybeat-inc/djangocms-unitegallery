@@ -129,7 +129,7 @@ class GalleryPhoto(models.Model):
             return self.title
         if self.image:
           return _("Photo %s") % self.image.url
-        return self.image
+        return str(self.id)
 
     def get_thumbnail_size(self):
         """
